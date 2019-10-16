@@ -1,0 +1,27 @@
+Public Class Form3
+    Public Shared nomorterakhir As Integer
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        nomorterakhir = 0
+        My.Forms.Form4.btnambilloket1.Enabled = False
+        My.Forms.Form5.btnambilloket2.Enabled = False
+    End Sub
+    Public Sub ambilnomor(noambil As Integer)
+        noambil = nomorterakhir + 1
+        nomorterakhir = noambil
+    End Sub
+    Public Sub kirimnomor(nomorantrian As Integer)
+        nomorterakhir = nomorantrian + 1
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnambilnomor.Click
+        If (nomorterakhir = 0) Then
+            Call ambilnomor(nomorterakhir)
+            lblnomor.Text = nomorterakhir.ToString
+        Else
+            lblnomor.Text = nomorterakhir.ToString
+        End If
+        My.Forms.Form4.btnambilloket1.Enabled = True
+        My.Forms.Form5.btnambilloket2.Enabled = True
+
+
+    End Sub
+End Class
