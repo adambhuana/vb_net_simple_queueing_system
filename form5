@@ -1,0 +1,12 @@
+Public Class Form5
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnambilloket2.Click
+        Dim na As Integer
+        na = Form3.nomorterakhir
+        btnambilloket2.Enabled = False
+        lblloket2.Text = na.ToString
+        Dim tts = CreateObject("SAPI.spvoice")
+        tts.speak("Number" + lblloket2.Text + "Please Come to Locket Number Two")
+        Call My.Forms.Form3.kirimnomor(na)
+
+    End Sub
+End Class
